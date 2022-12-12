@@ -5,9 +5,11 @@ let tasksArr = [];
 
 // Reset The Indexes
 const resetIndex = (arr) => {
-  for (let i = 0; i < arr.length; i += 1) {
-    arr[i].index = i + 1;
-  }
+  let count = 1
+  arr.forEach((el) => {
+    el.index = count;
+    count += 1;
+  })
 };
 
 // Save To Local Directory
@@ -87,9 +89,7 @@ const changeTaskBg = (input) => {
 // Extract From Local Directory and Display
 const displayList = () => {
   const getJsonData = localStorage.getItem('lists');
-  if (getJsonData) {
-    tasksArr = JSON.parse(getJsonData);
-  }
+  if (getJsonData) tasksArr = JSON.parse(getJsonData);
   renderDisplay();
 };
 

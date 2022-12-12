@@ -19,9 +19,7 @@ window.addEventListener('load', () => {
 inputList.addEventListener('keypress', (e) => {
   const { target } = e;
   if (target.value === '') return;
-  if (e.key === 'Enter') {
-    addList();
-  }
+  if (e.key === 'Enter') addList();
 });
 
 allList.addEventListener('click', (e) => {
@@ -32,9 +30,7 @@ allList.addEventListener('click', (e) => {
   // target the data action
   const { action } = target.dataset;
 
-  if (action === 'delete') {
-    removeList(eachListId);
-  }
+  if (action === 'delete') removeList(eachListId);
 });
 
 allList.addEventListener('change', (e) => {
